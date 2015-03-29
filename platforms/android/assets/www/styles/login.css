@@ -1,0 +1,28 @@
+@import "app.css";
+
+.login-form {
+    text-align: center;
+    width: 80%;
+    margin: 60px auto 0;
+}
+
+input[type=text], input[type=password] {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    outline: none;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.login-button {
+     width: 100%;
+     margin: 0 auto;
+ }
+
+#load-login {
+    font-size: 20px;
+    margin: 0 48%;
+    color: #999999;
+    margin-top: 10pt;
+}

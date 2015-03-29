@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles/zones.css">
+</head>
+<body>
+
+<ons-page ng-controller="zonesController">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Parking zones</div>
+        <div class="right">
+            <span class="toolbar-button--quiet navigation-bar__line-height" modifier="quiet">{{ActiveVehicle.VRN}}</span>
+        </div>
+    </ons-toolbar>
+
+    <ons-list id="zones-list">
+        <div ng-show="ActiveZone" >
+            <ons-list-header>Active</ons-list-header>
+            <ons-list-item modifier="chevron" class="parkZone"  ng-click="openZone(ActiveZone)">{{ActiveZone.ZoneCode}} - {{ActiveZone.Street}}
+                <div ng-controller="timerController" style="display:inline">
+                    <span ng-show="Activated" ng-class="{active: Activated}" > {{ParkedSince}} </span>
+                </div>
+            </ons-list-item>
+        </div>
+
+        <div ng-show="!ActiveZone" >
+            <ons-list-header>Favourite zones</ons-list-header>
+            <ons-list-item ng-repeat="zone in FavouriteZones"modifier="chevron" class="parkZone" ng-click="openZone(zone)">{{zone.Description}}</ons-list-item>
+        </div>
+
+        <div ng-show="!ActiveZone" >
+            <ons-list-header>Nearby zones</ons-list-header>
+            <ons-list-item ng-repeat="zone in NearbyZones | orderBy:'+Distance'" modifier="chevron" class="parkZone" ng-click="openZone(zone)">{{zone.ZoneCode}} - {{zone.Street}}<span>{{zone.Distance}}m</span></ons-list-item>
+            <ons-icon id="load-nearby" icon="refresh" spin="true" fixed-width="true"></ons-icon>
+        </div>
+    </ons-list>
+
+</ons-page>
+
+</body>
+</html>
