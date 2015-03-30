@@ -9,9 +9,6 @@
 *.iml
 *.iws
 
-# Grunt Project build
-/www/
-
 # OSX Noise
 .DS_Store
 profile

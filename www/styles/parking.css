@@ -1,0 +1,64 @@
+#parkzone-map{
+    width: 100%;
+    height: 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#parkzone-price label{
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 10px 0px 10px;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    color: #1f1f21;
+    background-color: transparent;
+    font-size: 12pt;
+}
+#parkzone-price span{
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 10px;
+    margin: 0 0 0 0;
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+    color: #1f1f21;
+    background-color: transparent;
+    font-size: 11pt;
+}
+
+
+
+#parkzone-timer{
+    text-align: center;
+    width: 100%;
+    font-size: 40pt;
+    font-weight: bold;
+}
+#parkzone-timer span.active{
+    animation: blink 4s ease infinite;
+    -webkit-animation: blink 4s ease infinite;
+}
+#parkzone-timer p {
+    font-size: 10pt;
+    font-weight: 200;
+}
+
+@keyframes blink { 50% { color: #ddd; } }
+@-webkit-keyframes blink { 50% { color: #ddd; } }
+
+
+#parkzone-notactive, #parkzone-active{
+    margin: 0pt 20pt;
+}
+#load-parkzone {
+    font-size: 20px;
+    margin: 0 48%;
+    color: #999999;
+    margin-top: 10pt;
+}
+
+#time-scheduler{
+    float:right;
+}

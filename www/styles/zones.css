@@ -1,0 +1,20 @@
+
+.parkZone span{
+    font-size: 12px;
+    color: #999999;
+    float: right;
+    margin-right: 25pt;
+}
+
+.start-button {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#load-nearby{
+    font-size: 20px;
+    margin: 0 48%;
+    color: #999999;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}

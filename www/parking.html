@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles/parking.css">
+</head>
+<body>
+
+<ons-page ng-controller="parkingController">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Zones</ons-back-button>
+        </div>
+        <div class="center">{{ParkZone.ZoneCode}} - {{ParkZone.Street}}</div>
+        <div class="right">
+            <span class="toolbar-button--quiet navigation-bar__line-height" ng-show="!IsZoneFavourite" ng-click="addToFavourite()">Save</span>
+            <span class="toolbar-button--quiet navigation-bar__line-height" ng-show="IsZoneFavourite" ng-click="removeFromFavourite()">Remove</span>
+        </div>
+    </ons-toolbar>
+    <div id="parkzone-map" style="background-image: url(https://maps.googleapis.com/maps/api/staticmap?center={{ParkZone.Coordinates[0].latitude}},{{ParkZone.Coordinates[0].longitude}}&zoom=15&size=300x300&maptype=roadmap&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=euro%257CFFFFFF%7C{{ParkZone.Coordinates[0].latitude}},{{ParkZone.Coordinates[0].longitude}}&markers=color:red%7Csize:mid%7C{{CurrentPosition.latitude}},{{CurrentPosition.longitude}})"></div>
+    <div id="parkzone-price">
+        <label>Price information</label>
+        <span>{{ParkZoneDetail.Tarrifs[0]}}</span>
+    </div>
+    <br/>
+    <div id="parkzone-timer" ng-controller="timerController">
+        <span ng-show="Activated" ng-class="{active: Activated}" > {{ParkedSince}} </span>
+        <p ng-show="Activated" > Max until {{DeactivationDate | date:'dd-MM-yyyy HH:mm'}} </p>
+        <span ng-show="!Activated" ng-class="{active: Activated}" > 0:00:00 </span>
+    </div>
+    <br/>
+    <div id="parkzone-notactive" ng-show="!Activated">
+        <ons-button modifier="large" class="parking-button" ng-click="startParking()">Start Parking</ons-button>
+    </div>
+    <div id="parkzone-active" ng-show="Activated">
+        <ons-button modifier="large" class="parking-button" ng-click="stopParking()">Stop Parking</ons-button>
+        <br>
+        <div id="parkzone-scheduler" ng-controller="scheduleController">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="SchedulerEnabled">
+                <div class="checkbox__checkmark"></div>
+                Schedule parking
+            </label>
+            <button id="time-scheduler"ng-show="SchedulerEnabled" class="button button--quiet" ng-show="!Scheduled" ng-click="openSchedulePopover()">{{SchedulerTime}} Hours</button>
+
+            <div id="schedule-popover" style="display:none">
+                <div class="dialog-mask"></div>
+                <div class="dialog" style="height:200px">
+                    <div class="page">
+                         <ons-list style="text-align: center">
+                            <ons-list-header style="text-align: center">Reset every</ons-list-header>
+                            <ons-list-item modifier="tappable" ng-click="closeSchedulePopover(1)">1h</ons-list-item>
+                            <ons-list-item modifier="tappable" ng-click="closeSchedulePopover(2)">2h</ons-list-item>
+                            <ons-list-item modifier="tappable" ng-click="closeSchedulePopover(3)">3h</ons-list-item>
+                            <ons-list-item modifier="tappable" ng-click="closeSchedulePopover(6)">6h</ons-list-item>
+                        </ons-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <ons-icon id="load-parkzone" icon="refresh" spin="true" fixed-width="true" style="display:none"></ons-icon>
+</ons-page>
+
+</body>
+</html>
