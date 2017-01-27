@@ -12,10 +12,12 @@ var dateTimeReviver = function (key, value) {
     return value;
 };
 var utf8_to_b64 = function (str) {
+    if (!str) return str;
     return window.btoa(unescape(encodeURIComponent(str)));
 };
 
 var b64_to_utf8 = function (str) {
+    if (!str) return str;
     return decodeURIComponent(escape(window.atob(str)));
 };
 var parseMilliSeconds = function(totalMilliSec) {

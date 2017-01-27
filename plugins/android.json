@@ -46,18 +46,24 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.geolocation": {
+        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         },
-        "de.appplant.cordova.plugin.background-mode": {
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         },
-        "org.apache.cordova.console": {
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.bartsidee.parklineautomated"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         }
     },
     "dependent_plugins": {
-        "org.apache.cordova.device": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.bartsidee.parklineautomated"
+        },
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         }
     }

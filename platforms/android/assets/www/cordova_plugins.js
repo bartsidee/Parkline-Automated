@@ -1,30 +1,46 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "de.appplant.cordova.plugin.background-mode.BackgroundMode",
-        "file": "plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js",
-        "pluginId": "de.appplant.cordova.plugin.background-mode",
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "pluginId": "cordova-plugin-background-mode",
         "clobbers": [
             "cordova.plugins.backgroundMode",
             "plugin.backgroundMode"
         ]
     },
     {
-        "id": "org.apache.cordova.device.device",
-        "file": "plugins/org.apache.cordova.device/www/device.js",
-        "pluginId": "org.apache.cordova.device",
+        "id": "cordova-plugin-geolocation.geolocation",
+        "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+        "pluginId": "cordova-plugin-geolocation",
         "clobbers": [
-            "device"
+            "navigator.geolocation"
         ]
+    },
+    {
+        "id": "cordova-plugin-geolocation.PositionError",
+        "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+        "pluginId": "cordova-plugin-geolocation",
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.geolocation": "0.3.12",
-    "de.appplant.cordova.plugin.background-mode": "0.6.4",
-    "org.apache.cordova.console": "0.2.13",
-    "org.apache.cordova.device": "0.3.0"
+    "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-background-mode": "0.6.5",
+    "cordova-plugin-console": "1.0.5",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-geolocation": "2.4.1",
+    "cordova-plugin-whitelist": "1.3.1"
 };
 // BOTTOM OF METADATA
 });
