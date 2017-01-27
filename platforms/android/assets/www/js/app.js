@@ -389,8 +389,6 @@ module.controller('zonesController', [ '$scope', '$http', 'Auth', function ($sco
         }
 
         navigator.geolocation.getCurrentPosition(function(pos){
-//            var latitude = 52.340261,
-//                longitude = 4.844730;
             var latitude = pos.coords.latitude,
                 longitude = pos.coords.longitude;
             $("#load-nearby").show();
@@ -589,6 +587,8 @@ module.controller('timerController', [ '$scope', '$timeout', 'Auth', function ($
     var mytimeout = $scope.onTimeout();
 }]);
 
+
+//controller to schedule parking re-start
 module.controller('scheduleController', [ '$scope', '$timeout', 'Scheduler', function ($scope, $timeout, Scheduler){
 
     $scope.SchedulerEnabled = Scheduler.isSchedulerEnabled();
