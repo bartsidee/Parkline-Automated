@@ -47,7 +47,7 @@ module.controller('AppController', ['Auth', function(Auth) {
 
         if(typeof cordova !== 'undefined'){
             cordova.plugins.backgroundMode.setDefaults({
-                title:'Parkline Active',
+                title:'Parkline Automated',
                 text:''
             });
             cordova.plugins.backgroundMode.onactivate = function () {
@@ -576,6 +576,12 @@ module.controller('timerController', [ '$scope', '$timeout', 'Auth', function ($
         var diff = (new Date() - Auth.getActiveVehicle().ActivationTime);
         $scope.ParkedSince = parseMilliSeconds(diff);
         $scope.DeactivationDate = Auth.getActiveVehicle().AutomaticDeactivationTime;
+
+        if (cordova.plugins.backgroundMode.isActive()){
+            cordova.plugins.backgroundMode.configure({
+             text: $scope.ParkedSince
+            });
+        }
     };
 
     $scope.stop = function(){

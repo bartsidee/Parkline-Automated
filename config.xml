@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.bartsidee.parklineautomated" version="1.0.0" android-versionCode="1" ios-CFBundleVersion="1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="1" id="com.bartsidee.parklineautomated" ios-CFBundleVersion="1" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ParkLine Automated</name>
     <description>
         Park-line with automated timer
     </description>
-
     <preference name="android-minSdkVersion" value="16" />
     <preference name="android-installLocation" value="auto" />
-
     <access origin="https://*.park-line.nl" />
     <access origin="https://*.googleapis.com" />
     <content src="index.html" />
-
     <preference name="Orientation" value="portrait" />
+    <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
 </widget>

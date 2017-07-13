@@ -46,9 +46,6 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-background-mode": {
-            "PACKAGE_NAME": "com.bartsidee.parklineautomated"
-        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         },
@@ -57,13 +54,16 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         }
     },
     "dependent_plugins": {
-        "cordova-plugin-device": {
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         },
-        "cordova-plugin-compat": {
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.bartsidee.parklineautomated"
         }
     }

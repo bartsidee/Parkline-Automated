@@ -41,14 +41,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-background-mode": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-background-mode"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
@@ -61,6 +53,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@1.3.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-background-mode": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-background-mode"
         },
         "is_top_level": true,
         "variables": {}
